@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2">
+  <title>爱游戏体育 · 网站导览</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafafc;
+      font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      color: #1e2a3a;
+      padding: 2rem 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.04);
+      padding: 2.5rem 2rem;
+      transition: all 0.15s ease;
+    }
+
+    /* 标题层级 — 极简留白 */
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 0.2rem;
+      color: #111827;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #5f6b7a;
+      margin-top: 0.25rem;
+      margin-bottom: 2rem;
+      border-left: 3px solid #d4dbe5;
+      padding-left: 1rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-top: 2.2rem;
+      margin-bottom: 0.7rem;
+      color: #1f2a3f;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+      color: #2d374b;
+    }
+
+    p, li {
+      font-size: 0.96rem;
+      color: #2c3a4e;
+    }
+
+    p {
+      margin-bottom: 0.85rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul > li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul > li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #8595aa;
+      font-weight: 300;
+    }
+
+    /* 简洁卡片区（亮点卡） */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.2rem 0 0.5rem 0;
+    }
+
+    .feature-card {
+      flex: 1 1 180px;
+      background-color: #f5f7fa;
+      border-radius: 16px;
+      padding: 1.2rem 1rem;
+      transition: background 0.1s;
+    }
+
+    .feature-card:hover {
+      background-color: #eef1f5;
+    }
+
+    .feature-card .icon-placeholder {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 0.3rem;
+      opacity: 0.7;
+    }
+
+    .feature-card h4 {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      color: #15212e;
+    }
+
+    .feature-card p {
+      font-size: 0.85rem;
+      color: #4b5b6e;
+      margin-bottom: 0;
+    }
+
+    /* 使用建议区块 —— 自然边界 */
+    .advice-section {
+      background: #f8faff;
+      border-radius: 18px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.8rem 0 0.8rem 0;
+      border: 1px solid #e9ecf2;
+    }
+
+    .advice-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 提示 & FAQ 摘要（紧凑） */
+    .note-line {
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+      background: #f2f4f8;
+      border-radius: 40px;
+      padding: 0.6rem 1.2rem;
+      margin: 1.5rem 0 0.2rem 0;
+      font-size: 0.9rem;
+      color: #2e4058;
+    }
+
+    .note-line strong {
+      font-weight: 500;
+      color: #1f2a3f;
+    }
+
+    .faq-mini {
+      margin-top: 2rem;
+      border-top: 1px solid #e2e7ed;
+      padding-top: 1.5rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #121f2e;
+      margin-bottom: 0.1rem;
+    }
+
+    .faq-a {
+      color: #415166;
+      padding-left: 0.2rem;
+      font-size: 0.92rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e7ecf2;
+      margin: 1.8rem 0 1.2rem 0;
+    }
+
+    /* 链接风格 — 不夸张 */
+    a {
+      color: #1a4d7a;
+      text-decoration: none;
+      border-bottom: 1px solid #cbdae8;
+      transition: border-color 0.1s;
+    }
+
+    a:hover {
+      border-bottom-color: #1a4d7a;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem;
+        border-radius: 18px;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .feature-grid {
+        flex-direction: column;
+      }
+      .feature-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>爱游戏体育 · 网站简介</h1>
+  <div class="subhead">快速认识这个平台的基本用途与特点</div>
+
+  <!-- 摘要 -->
+  <p>
+    <strong>爱游戏体育</strong>是一个围绕体育与电子竞技内容整合的站点，主要面向希望快速了解赛事信息、游戏动态以及体育相关数字服务的用户。如果你正在寻找一个集中获取体育类游戏资讯、活动或数据参考的页面，那么 <a href="https://pro-aigamesport.com">爱游戏体育</a> 可以作为你日常浏览的起点之一。网站结构清晰，内容分类偏向实用，没有冗余的装饰信息。
+  </p>
+
+  <!-- 亮点卡片 -->
+  <h2>主要特点一览</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="icon-placeholder">▦</span>
+      <h4>内容聚合</h4>
+      <p>汇集体育游戏、电竞赛事、队伍动态等内容，省去在多个页面间切换的麻烦。</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon-placeholder">▣</span>
+      <h4>信息密度适中</h4>
+      <p>每屏呈现关键信息，不会堆砌无关广告或重复模块，适合快速浏览。</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon-placeholder">◈</span>
+      <h4>更新稳定</h4>
+      <p>内容保持定期刷新，尤其关注主流体育游戏及赛事预告，减少过时资讯干扰。</p>
+    </div>
+  </div>
+
+  <!-- 使用建议（平实） -->
+  <h2>使用建议</h2>
+  <div class="advice-section">
+    <p><strong>1. 明确你的浏览目标</strong><br>
+    如果你希望跟踪某款体育游戏的版本动态、赛事时间或社区热点，可以直接浏览首页的分类导航，或通过搜索查找特定主题。网站没有复杂的会员门槛，大部分内容可直接阅读。</p>
+    <p><strong>2. 善用赛事 / 活动板块</strong><br>
+    对于关注电竞赛事排期或线上杯赛的用户，建议留意页面中带有日期或倒计时标识的区域，这些通常是最近更新的活动情报。若你只是泛兴趣了解，浏览列表标题也能快速掌握大致方向。</p>
+    <p><strong>3. 配合其他信息源使用</strong><br>
+    爱游戏体育的内容偏向整合索引，可以作为补充参考。对于深度数据或实时比分，建议同时结合官方赛事直播平台或游戏内通知，以获得更完整的体验。</p>
+  </div>
+
+  <!-- 可信但克制的访问说明 -->
+  <h2>访问说明</h2>
+  <p>
+    本网站为公开访问的信息展示页面，无需注册或下载即可阅读主要内容。所有链接均为普通网页跳转，不涉及自动下载、隐私收集或强制跳转。如果你对某个话题感兴趣，直接单击文章标题或标签即可展开详情。<a href="https://pro-aigamesport.com">爱游戏体育</a> 目前提供中文界面，内容适配国内网络环境，加载速度在正常宽带下较为流畅。由于网站内容可能不定期调整，建议以实际页面显示为准。
+  </p>
+
+  <!-- 提示卡片（轻FAQ摘要） -->
+  <div class="note-line">
+    <strong>💡 提示</strong> 页面未包含自动播放视频、弹窗或强制登录模块，浏览体验相对安静。
+  </div>
+
+  <div class="faq-mini">
+    <h3>常见问题摘要</h3>
+    <div class="faq-item">
+      <div class="faq-q">问：这个网站主要提供什么？</div>
+      <div class="faq-a">答：以体育类游戏和电竞资讯为核心，包括赛事预告、游戏更新摘要、社区热点整理等。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">问：内容更新频率如何？</div>
+      <div class="faq-a">答：通常保持每周数次更新，重点赛事或新版本发布期间会更密集。没有固定的“日更”承诺，但信息时效性在同类型站点中属于中等偏上。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">问：是否需要付费或注册？</div>
+      <div class="faq-a">答：目前所有可阅读内容均免费，不设付费墙。没有强制注册环节，部分互动功能（如评论）可能需登录第三方账号，但浏览不受影响。</div>
+    </div>
+  </div>
+
+  <hr>
+  <p style="font-size: 0.82rem; color: #6d7d91; margin-top: 0.2rem;">
+    页面说明 · 内容经过整理，仅作介绍用途。具体功能及服务以 <a href="https://pro-aigamesport.com">爱游戏体育</a> 实际页面为准。
+  </p>
+</div>
+</body>
+</html>
