@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从收藏到抵达 · 爱游戏</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            line-height: 1.65;
+            color: #2c2c2c;
+            background: #faf9f7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .hero {
+            background: #1b1e2b;
+            color: #e6e8ee;
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #d4a373, #bc6c25, #d4a373);
+            opacity: 0.7;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.6rem;
+            color: #f0ead6;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 620px;
+            margin: 0 auto;
+            color: #b7b9c4;
+            font-weight: 350;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 4rem;
+            flex: 1;
+        }
+
+        .article-title {
+            font-size: 1.75rem;
+            font-weight: 450;
+            line-height: 1.3;
+            margin-bottom: 0.3rem;
+            color: #1f1f2b;
+            border-left: 4px solid #bc6c25;
+            padding-left: 1rem;
+        }
+        .article-meta {
+            font-size: 0.9rem;
+            color: #7b7b8a;
+            margin-bottom: 2.2rem;
+            margin-top: 0.2rem;
+            padding-left: 1.4rem;
+        }
+
+        .post p {
+            margin-bottom: 1.45rem;
+            font-size: 1.04rem;
+            text-align: justify;
+        }
+
+        .pull-quote {
+            background: #f4f1ea;
+            border-left: 5px solid #bc6c25;
+            padding: 1.2rem 1.6rem;
+            margin: 2rem 0;
+            font-size: 1.08rem;
+            border-radius: 0 8px 8px 0;
+            color: #2c2c2c;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .pull-quote::before {
+            content: "❝ ";
+            font-size: 1.6rem;
+            color: #bc6c25;
+        }
+
+        a {
+            color: #9c5211;
+            text-decoration: none;
+            border-bottom: 1px dotted #bc6c25;
+            transition: border-bottom 0.2s, color 0.15s;
+        }
+        a:hover {
+            color: #7a3e0b;
+            border-bottom: 2px solid #7a3e0b;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0 1.5rem;
+        }
+        .feature-item {
+            flex: 1 1 200px;
+            background: white;
+            padding: 1.4rem 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid #e8e6e0;
+        }
+        .feature-item h3 {
+            font-weight: 500;
+            font-size: 1.08rem;
+            margin-bottom: 0.5rem;
+            color: #1f2a3a;
+            letter-spacing: 0.01em;
+        }
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4a4a55;
+            margin-bottom: 0;
+        }
+
+        .faq-summary {
+            margin-top: 2.8rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd8cf;
+        }
+        .faq-summary h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            margin-bottom: 1.2rem;
+            color: #1f1f2b;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #3d3d4a;
+            margin-bottom: 0.2rem;
+        }
+        .faq-item p {
+            margin: 0 0 0.5rem 0;
+            color: #51515e;
+            font-size: 0.98rem;
+        }
+
+        .visit-note {
+            margin-top: 3rem;
+            background: #eae7df;
+            padding: 1.6rem 2rem;
+            border-radius: 20px;
+            font-size: 1.02rem;
+            text-align: center;
+            color: #1f1f2b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem 1.8rem;
+            font-size: 0.85rem;
+            color: #777685;
+            border-top: 1px solid #e2dfd7;
+            background: #f5f3ef;
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 3rem 1rem 2.2rem; }
+            .hero h1 { font-size: 1.9rem; }
+            .container { padding: 1.8rem 1rem 3rem; }
+            .article-title { font-size: 1.4rem; }
+            .feature-grid { flex-direction: column; }
+            .pull-quote { padding: 1rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>爱游戏 · 再次抵达</h1>
+    <p>收藏是开始，持续关注才能遇见更深的体验</p>
+</section>
+
+<main class="container">
+
+    <article class="post">
+
+        <h2 class="article-title">从书签到日常：一个站点的打开方式</h2>
+        <div class="article-meta">持续关注 · 数字栖息地</div>
+
+        <p>一个优质的游戏内容站点，值得被反复打开，而不是冷落在收藏夹的角落。对于长期关注单机、独立游戏以及深度评测的读者来说，<a href="https://waf-ayx.com.cn">爱游戏</a> 已经成为一块稳定的信息锚点。它的内容密度与选文节奏，恰好适合那些不依赖算法推荐、主动寻找阅读价值的用户。</p>
+
+        <p>第一次访问或许来自一篇关于叙事设计的拆解，或是某款冷门佳作的推荐。而第二次、第三次访问，往往意味着你已经把它纳入了自己的信息路径。收藏是表层的仪式感，真正让它产生价值的，是后续的每一次点击与阅读。</p>
+
+        <div class="pull-quote">
+            书签只是索引，持续关注才是通向内容深度的唯一路径。
+        </div>
+
+        <p>在信息过载的时代，编辑精选与长期专栏反而成为稀缺品。<a href="https://waf-ayx.com.cn">爱游戏</a> 并不追求每日轰炸式的更新，而是更倾向于提供经过沉淀的观点、回顾与前瞻。对于希望保持阅读节奏而非被动接收推送的读者，这种频率本身就是一种信任信号。</p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>稳定更新 · 专栏优先</h3>
+                <p>定期推出主题专栏与深度选题，不追逐短期热点，保持内容的长尾价值。</p>
+            </div>
+            <div class="feature-item">
+                <h3>轻量叙事 · 强可读性</h3>
+                <p>文章结构清晰，语言干净，不堆砌术语，适合从碎片时间中获得完整认知。</p>
+            </div>
+            <div class="feature-item">
+                <h3>索引友好 · 常读常新</h3>
+                <p>历史文章归档清晰，便于回溯与交叉阅读，适合长期订阅者反复查阅。</p>
+            </div>
+        </div>
+
+        <p>如果你只是随手收藏了某一篇好文，不妨再次打开它。许多内容在初次阅读时只能捕捉表面信息，而重读往往能获取更细微的脉络。尤其是那些涉及游戏机制演变、行业趋势回顾的长文，第二次阅读时常常能发现之前忽略的关联。</p>
+
+        <p>也正因如此，将 <a href="https://waf-ayx.com.cn">爱游戏</a> 保持在常访问列表里，比单纯添加书签更有意义。它不是一个需要“特意安排时间”才能打开的站点，而是一个可以自然融入日常信息流的阅读伙伴。浏览器的标签栏、阅读器订阅、或是桌面快捷方式——用你最顺手的方式让它留在手边。</p>
+
+    </article>
+
+    <section class="faq-summary">
+        <h2>常见关注点 · 简答</h2>
+
+        <div class="faq-item">
+            <strong>内容更新频率如何？</strong>
+            <p>保持每周 2–3 篇深度内容，不算密集，但每篇都经过选题与编辑打磨。适合不想被推送轰炸的读者。</p>
+        </div>
+        <div class="faq-item">
+            <strong>是否有独立游戏或经典重访栏目？</strong>
+            <p>是的，日常选题涵盖独立游戏推荐、经典作品回顾以及产业观察，角度偏作者化，不流水线生产。</p>
+        </div>
+        <div class="faq-item">
+            <strong>适合新读者从头开始阅读吗？</strong>
+            <p>完全适合。每一篇文章都相对独立，同时专栏之间有隐性的知识递进，新读者也可以随时进入，没有阅读门槛。</p>
+        </div>
+    </section>
+
+    <div class="visit-note">
+        <p>📎 将 <a href="https://waf-ayx.com.cn">爱游戏</a> 加入常用访问列表，让好内容不再只停留于一次性的阅读。</p>
+    </div>
+
+</main>
+
+<footer>
+    <span>内容独立呈现 · 持续关注即是最好的支持</span>
+</footer>
+
+</body>
+</html>
